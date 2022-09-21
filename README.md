@@ -5,9 +5,9 @@ Watermark any pdf. Supports text as well as image.
 **Options**
 
 - **pdf_path** - your pdf path.
-- **text** - To specify the text to be overlaid on the main image.
-- **image_path** - To specify size of text over the main image, value ranged from 1 to 8.
-- **output_dir** - To specify the output path. Default is 'watermark.{sourceFile ext}'.
+- **text** - define text to be written on text.
+- **image_path** - Image path of watermark.
+- **output_dir** - Destination pdf file.
 - **imageOptions** - image option like opacity, size and more. supports other pdf-lib options'.
 - **textOption** - text option like opacity, size and more. supports other pdf-lib options'.
 
