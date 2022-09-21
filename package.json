@@ -1,6 +1,6 @@
 {
   "name": "pdf-watermark",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Add image and text watermark.",
   "main": "watermark.js",
   "scripts": {
@@ -12,7 +12,6 @@
     "type": "git",
     "url": "https://github.com/admondtamang/pdf-watermark"
   },
-  "type": "module",
   "keywords": [
     "watermark",
     "watermark pdf",
