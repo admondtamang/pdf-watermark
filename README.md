@@ -14,11 +14,29 @@ Watermark any pdf. Supports text as well as image.
 **Example**
 
 ```
+  const PDFWatermark= require('pdf-watermark');
+
   await PDFWatermark({
     pdf_path: "./newsletter.pdf",
-    text: "Gentech",
-    output_dir: "./output.pdf",
     image_path: "./everest.png",
+    text: "Gentech",
+    output_dir: "./output.pdf", // remove to override file
+  });
+
+```
+
+**More Options**
+
+```
+  const PDFWatermark= require('pdf-watermark');
+
+  await PDFWatermark({
+    pdf_path: "./newsletter.pdf",
+    image_path: "./everest.png",
+    imageOptions:{
+      opacity:0.2,
+      //other properties
+    }
   });
 
 ```
