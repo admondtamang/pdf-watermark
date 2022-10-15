@@ -17,13 +17,15 @@ Watermark any pdf. Supports text as well as image.
   const PDFWatermark= require('pdf-watermark');
 
   await PDFWatermark({
-    pdf_path: "./newsletter.pdf",
+    pdf_path: "./newsletter.pdf", 
     image_path: "./everest.png",
-    text: "Gentech",
+    text: "Gentech", 
     output_dir: "./output.pdf", // remove to override file
   });
 
 ```
+
+NOTE: you can use **text** only / **image_path** only or both at same time.
 
 **More Options**
 
@@ -37,9 +39,21 @@ Watermark any pdf. Supports text as well as image.
       opacity:0.2,
       //other properties
     }
+    textOption:{
+        diagonally:true
+    },
+    imageOption:{
+        size: 12,
+        opacity: 0.6,
+        x:5,
+        y:20,
+        diagonally:true
+    }
   });
 
 ```
+
+NOTE : To use diagonally it is best if you dont add other properties like size, x and y.
 
 ### Inspiration
 

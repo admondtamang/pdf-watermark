@@ -1,6 +1,6 @@
 {
   "name": "pdf-watermark",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Add image and text watermark.",
   "main": "watermark.js",
   "scripts": {
@@ -15,9 +15,13 @@
   "keywords": [
     "watermark",
     "watermark pdf",
+    "watermark pdf nodejs",
+    "pdf watermark",
+    "add watermark pdf",
     "image watermark",
     "pdf-lib",
     "text watermark",
+    "image watermark",
     "add watermark"
   ],
   "dependencies": {

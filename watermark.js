@@ -1,11 +1,11 @@
-const { PDFDocument } = require("pdf-lib");
+const { PDFDocument, degrees } = require("pdf-lib");
 const { writeFileSync, readFileSync } = require("fs");
 
 async function PDFWatermark(options) {
   const { text, pdf_path, image_path, output_dir, imageOption = {}, textOption = {} } = options;
 
   if (!pdf_path) {
-    throw Error("Please add pdf_path in options.");
+        throw Error('Please add pdf_path in options.');
   }
 
   // load pdf
@@ -19,11 +19,20 @@ async function PDFWatermark(options) {
   if (text) {
     for (let i = 0; i < numberOfPages; i++) {
       const page = pages[i];
+      const { width, height } = page.getSize();
+
+      // diagonally rotate text
+      if (textOption?.diagonally == true) {
+        textOption.rotate = degrees(-45);
+        textOption.x = width / 2 - text.length * 9;
+        textOption.y = height / 2 + 200;
+        textOption.size = 50;
+      }
 
       // text watermark
       await page.drawText(text, {
-        x: page.getWidth() / 2 - (text.length + 15), // center with left padding for text
-        y: page.getHeight() / 2 - 20,
+        x: width / 2 - text.length * 9, // center with left padding for text
+        y: height / 2 - 20,
         size: 12,
         opacity: 0.6,
         ...textOption,
@@ -41,10 +50,18 @@ async function PDFWatermark(options) {
     // loop throgh all pages
     for (let i = 0; i < numberOfPages; i++) {
       const page = pages[i];
+      const { width, height } = page.getSize();
+
+      // diagonally rotate text
+      if (imageOption?.diagonally == true) {
+        imageOption.rotate = degrees(-45);
+        imageOption.x = width / 2;
+        imageOption.y = height / 2 + 200;
+      }
 
       await page.drawImage(image, {
-        x: page.getWidth() / 2 - pngDims.width / 2 + 15,
-        y: page.getHeight() / 2 - pngDims.height - 20,
+        x: width / 2 - pngDims.width / 2 + 15,
+        y: height / 2 - pngDims.height - 20,
         width: pngDims.width,
         height: pngDims.height,
         opacity: 0.6,
