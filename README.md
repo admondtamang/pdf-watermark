@@ -38,7 +38,7 @@ NOTE: you can use **text** only / **image_path** only or both at same time.
     imageOptions:{
       opacity:0.2,
       //other properties
-    }
+    },
     textOption:{
         diagonally:true
     },
