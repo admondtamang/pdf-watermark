@@ -9,7 +9,7 @@ async function PDFWatermark(options) {
   }
 
   // load pdf
-  const document = await PDFDocument.load(readFileSync(pdf_path));
+  const document = await PDFDocument.load(readFileSync(pdf_path), {ignoreEncryption: true});
 
   //   get pages and number of pages
   const pages = document.getPages();
