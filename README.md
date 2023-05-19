@@ -2,6 +2,10 @@
 
 Watermark any pdf. Supports text as well as image.
 
+## Demo
+
+https://stackblitz.com/edit/node-jsdcfq?file=package.json,index.js
+
 **Options**
 
 - **pdf_path** - your pdf path.
@@ -17,9 +21,9 @@ Watermark any pdf. Supports text as well as image.
   const PDFWatermark= require('pdf-watermark');
 
   await PDFWatermark({
-    pdf_path: "./newsletter.pdf", 
+    pdf_path: "./newsletter.pdf",
     image_path: "./everest.png",
-    text: "Gentech", 
+    text: "Gentech",
     output_dir: "./output.pdf", // remove to override file
   });
 

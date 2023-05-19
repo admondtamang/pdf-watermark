@@ -5,11 +5,11 @@ async function PDFWatermark(options) {
   const { text, pdf_path, image_path, output_dir, imageOption = {}, textOption = {} } = options;
 
   if (!pdf_path) {
-        throw Error('Please add pdf_path in options.');
+    throw Error("Please add pdf_path in options.");
   }
 
   // load pdf
-  const document = await PDFDocument.load(readFileSync(pdf_path), {ignoreEncryption: true});
+  const document = await PDFDocument.load(readFileSync(pdf_path), { ignoreEncryption: true });
 
   //   get pages and number of pages
   const pages = document.getPages();
@@ -26,7 +26,6 @@ async function PDFWatermark(options) {
         textOption.rotate = degrees(-45);
         textOption.x = width / 2 - text.length * 9;
         textOption.y = height / 2 + 200;
-        textOption.size = 50;
       }
 
       // text watermark

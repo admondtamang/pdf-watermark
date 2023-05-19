@@ -1,6 +1,6 @@
 {
   "name": "pdf-watermark",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Add image and text watermark.",
   "main": "watermark.js",
   "scripts": {
